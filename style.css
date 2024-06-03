@@ -66,16 +66,13 @@ h1,h2,h3 {
 
 h1{
     font: var(--h1);
-    flex: 3;
 }
 h2{
     font: var(--h2);
-    flex: 2;
 }
 h3{
     font: var(--h3);
-    flex: 1;
 }
 
 /* ----------------- */
-/*      tag base     */
+/*      ........     */

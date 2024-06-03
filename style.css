@@ -1,13 +1,81 @@
-:root{
-    --colorePrimario: black;
-    --coloreSecondario: white;
-    --ff: "sans serif"; 
+/* mobile-first */
+:root {
+    /* background for your dark-on-light designs, or the text color of an inverted design. */
+    --light-shades: #FCFCFC;
+    /* bring attention to design elements by contrasting with the rest of the palette. */
+    --light-accent: #9D9E97;
+    /*  eye-catching but not harsh. It can be liberally applied to your layout as its main identity. */
+    --main-brand-color: #EC9334;
+    /* accent color to consider */
+    --dark-accent: #63536B;
+    /* text color for dark-on-light designs, or as the background for inverted designs. */
+    --dark-shades: #1B191D;
+
+    --titleFont: "Teko", sans-serif;
+    --accentFont: "Fira Sans Condensed", sans-serif;
+    --bodyFont: "Hind Guntur", sans-serif;
+
+    --h1: bold 6em var(--titleFont);
+    --h2: 600 italic 4em var(--accentFont);
+    --h3: 300 2em var(--bodyFont);
+}
+
+/* Responsive
+   dispositivi con larghezza maggiore di 720px
+*/
+
+@media screen and (min-width: 720px){
+    :root {
+        --h1: bold 8em var(--titleFont);
+        --h2: 600 italic 5em var(--accentFont);
+        --h3: 300 2vw var(--bodyFont);
+    } 
+}
+
+/* ----------------- */
+/*      tag base     */
+
+* {
+    margin: 0;
+    font-family: var(--primoFont);
+}
+
+body,
+html {
+    font-family: "Hind Madurai";
+    font-weight: 200;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--dark-shades);
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 600px;
+}
+
+h1,h2,h3 {
+    color: var(--light-accent);
 }
 
 h1{
-    color: var(--coloreSecondario);
+    font: var(--h1);
+    flex: 3;
+}
+h2{
+    font: var(--h2);
+    flex: 2;
+}
+h3{
+    font: var(--h3);
+    flex: 1;
 }
 
-body{
-    background-color: var(--colorePrimario);
-}
+/* ----------------- */
+/*      tag base     */

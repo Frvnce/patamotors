@@ -1,5 +1,11 @@
 :root{
-    --colorePrimario: black; 
+    --colorePrimario: black;
+    --coloreSecondario: white;
+    --ff: "sans serif"; 
+}
+
+h1{
+    color: var(--coloreSecondario);
 }
 
 body{

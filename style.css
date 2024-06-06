@@ -15,9 +15,9 @@
     --accentFont: "Fira Sans Condensed", sans-serif;
     --bodyFont: "Hind Guntur", sans-serif;
 
-    --h1: bold 6em var(--titleFont);
-    --h2: 600 italic 4em var(--accentFont);
-    --h3: 300 2em var(--bodyFont);
+    --h1: 550 3.2rem/64px var(--titleFont);
+    --h2: 700 3rem/64px var(--accentFont);
+    --h3: 450 1.5rem/48px var(--bodyFont);
 }
 
 /* Responsive
@@ -26,9 +26,9 @@
 
 @media screen and (min-width: 720px){
     :root {
-        --h1: bold 8em var(--titleFont);
-        --h2: 600 italic 5em var(--accentFont);
-        --h3: 300 2vw var(--bodyFont);
+        --h1: bold 10em var(--titleFont);
+        --h2: 400 5em var(--titleFont);
+        --h3: 300 3em var(--bodyFont);
     } 
 }
 
@@ -40,24 +40,16 @@
     font-family: var(--primoFont);
 }
 
-body,
 html {
-    font-family: "Hind Madurai";
-    font-weight: 200;
-    font-style: normal;
+    font-size: 16px;
+
+    height: 300%;
 }
 
 body {
     background-color: var(--dark-shades);
-}
-
-div{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    width: 100%;
-    height: 600px;
+    
+    min-height: 100%;
 }
 
 h1,h2,h3 {
@@ -75,4 +67,117 @@ h3{
 }
 
 /* ----------------- */
-/*      ........     */
+/*      HEADER     */
+
+.header {
+    display: flex;
+    
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    margin-top: 15px;
+
+
+    width: 100%;
+}
+
+
+
+.header > h1{
+    color: var(--light-shades);
+    margin-left: 2%;
+}
+
+.icona{
+    color: var(--main-brand-color)
+}
+
+/* ----------------- */
+/*      main-section     */
+
+.main-section{
+    display: flex;
+
+    background-image: url('./img/motorini.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vh cover;
+    background-position: left -200px top -100px;
+    z-index: 0;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.section-blur{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    opacity: 1;
+
+    background: rgb(27,25,29);
+    background: linear-gradient(0deg, rgba(27,25,29,1) 0%, rgba(27,25,29,0.6) 100%);
+}
+
+/* ----------------- */
+/*   chi-sono-section     */
+
+.chi-sono-section{
+    display: flex;
+    flex-wrap: wrap;
+
+    overflow: hidden;
+
+    gap: 10px;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: var(--light-shades);
+}
+
+.chi-sono-section h1,h2,h3{
+    color:  var(--dark-shades);
+}
+
+/* ----------------- */
+/*  immagini     */
+
+
+.immagine{
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+    flex-wrap: nowrap;
+
+    animation-name: img-cambiano;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    width: 100%;
+    height: 40vh;
+}
+
+.container-immagine{
+    background-color: red;
+    
+    overflow: hidden;
+    position: relative;
+
+    min-width: 300px;
+    height: 300px;
+}
+
+@keyframes img-cambiano{
+    from {transform: translate3d(-20%,0px,0px);}
+    to {transform: translate3d(-350%,0px,0px);}
+}

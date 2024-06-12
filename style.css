@@ -17,7 +17,7 @@
 
     --h1: 550 3.2rem/64px var(--titleFont);
     --h2: 700 3rem/64px var(--accentFont);
-    --h3: 450 1.2rem var(--bodyFont);
+    --h3: 450 1.4rem var(--bodyFont);
 }
 
 /* Responsive
@@ -29,6 +29,14 @@
         --h1: bold 5.2rem/64px var(--titleFont);
         --h2: 700 3rem/64px var(--accentFont);
         --h3: 450 1.5rem var(--bodyFont);
+    } 
+}
+
+@media screen and (max-width: 390px){
+    :root {
+        --h1: bold 3.2rem/64px var(--titleFont);
+        --h2: 700 2.4rem/64px var(--accentFont);
+        --h3: 450 1.2rem var(--bodyFont);
     } 
 }
 
@@ -116,6 +124,56 @@ h3{
     height: 100vh;
 }
 
+.slogan{
+    position: absolute;
+    z-index: 2;
+
+    top: 32vh;
+    left: 8vw;  
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 50vw;
+
+    padding: 10px;
+
+    /*border: solid 0.2em var(--main-brand-color);*/
+}
+
+@media screen and (max-width: 950px){
+    .slogan{
+        top: 20vh;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .slogan{
+        top: 20vh;
+        width: 90vw;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .slogan-titolo{
+        line-height: 40px;
+    }
+    .slogan-paragrafo{
+        line-height: 20px;
+    }
+}
+
+.slogan-titolo{
+    margin-bottom: 5px;
+    color: var(--main-brand-color);
+}
+
+.slogan-paragrafo{
+    color: var(--light-shades);
+    line-height: 35px;
+}
+
 .section-blur{
     position: absolute;
     z-index: 1;
@@ -166,6 +224,8 @@ h3{
     flex-direction: column;
     align-items: stretch;
 
+    justify-content: space-evenly;
+
     overflow: hidden;
 
     gap: 10px;
@@ -183,12 +243,13 @@ h3{
 }
 
 .titolo{
+    margin-top: 10px;
     border: 0px;
 }
 
 .paragrafo-grande{
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 18vw;
+    margin-right: 18vw;
 }
 
 /* ----------------- */
@@ -201,22 +262,36 @@ h3{
 
     gap: 10px;
     flex-wrap: nowrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
+.container-track{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
     flex: none;
     width: auto;
+
+    animation: animazione-img 21s linear infinite;
+}
+
+@keyframes animazione-img{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .container-immagine{
-    
-
     flex: none;    
     overflow: hidden;
 
     border-radius: 1em;
-    margin-bottom: 10px;
 }
-
-
 
 .wrap-img{
     border-radius: 1.7em;
@@ -235,4 +310,10 @@ h3{
     object-fit: cover;
     width: 100vh;
     max-width: 100%;
+    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
 }
+
+.container-immagine:hover .img {
+    transform: scale(1.1); /* Scale up the image slightly on hover */
+}
+

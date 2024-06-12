@@ -306,6 +306,20 @@ h3{
     }
 }
 
+@media screen and (max-width: 650px){
+    .wrap-img{
+        width: 15em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .wrap-img{
+        width: 12em;
+        height: 12em;
+    }
+}
+
 .img{
     object-fit: cover;
     width: 100vh;

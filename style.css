@@ -51,7 +51,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
-    height: 300%;
+    height: 100%;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -238,7 +238,7 @@ h3{
     background-color: var(--light-shades);
 }
 
-.chi-sono-section h1,h2,h3{
+.chi-sono-section h1,.chi-sono-section h2,.chi-sono-section h3{
     color:  var(--dark-shades);
 }
 
@@ -284,7 +284,11 @@ h3{
     flex: none;
     width: auto;
 
-    animation: animazione-img 21s linear infinite;
+    animation: animazione-img 30s linear infinite;
+}
+
+.back{
+    animation: animazione-img-back 30s linear infinite;
 }
 
 @keyframes animazione-img{
@@ -293,6 +297,14 @@ h3{
     }
     100% {
         transform: translateX(-50%);
+    }
+}
+@keyframes animazione-img-back{
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
 
@@ -339,5 +351,52 @@ h3{
 
 .container-immagine:hover .img {
     transform: scale(1.1); /* Scale up the image slightly on hover */
+}
+
+/* ----------------- */
+/*   work-section     */
+
+.work-section{
+    display: flex;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    justify-content: space-evenly;
+
+    overflow: hidden;
+
+    gap: 10px;
+
+    width: 100%;
+    min-height: 100vh;
+
+    text-align: center;
+
+    background-color: var(--dark-shades);
+}
+
+.work-section h1,.work-section h2,.work-section h3{
+    color:  var(--light-shades);
+}
+
+.work-section .titolo{
+    margin-top: 10px;
+    border: 0px;
+}
+
+.work-section .paragrafo-grande{
+    margin-left: 18vw;
+    margin-right: 18vw;
+}
+
+@media screen and (max-width: 720px){
+    .work-section .paragrafo-grande{
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+    .work-section .paragrafo-grande h3{
+        line-height: 30px;
+    }
 }
 

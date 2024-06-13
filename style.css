@@ -252,6 +252,16 @@ h3{
     margin-right: 18vw;
 }
 
+@media screen and (max-width: 720px){
+    .paragrafo-grande{
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+    .paragrafo-grande h3{
+        line-height: 30px;
+    }
+}
+
 /* ----------------- */
 /*  immagini     */
 
